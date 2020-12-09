@@ -18,14 +18,25 @@
 // si bisextile, divisible par 4
 // années divisible par 100 sont pas bisextiles
 // années divisible pas 400 sont bisextiles.
-let dateJour= Number(prompt("Renseigner un jour (en chiffres)"));
-let dateMois= Number(prompt("Renseigner un mois (en chiffres)"));
-let dateAnnee= Number(prompt("Renseigner une année (en chiffres)"));
-if(dateJour && dateMois && dateAnnee !== Number)
-{
-    console.log("Ecrivez en chiffres s'il vous plaît.");
+let dateJour= Number(prompt("Renseigner un jour (en chiffre au format 'xx')"));
+let dateMois= Number(prompt("Renseigner un mois (en chiffre au format 'xx')"));
+let dateAnnee= Number.isInteger(prompt("Renseigner une année (en chiffre au format 'xxxx')"));
+let bisextile = Math.max(28);
+let anneeNormal = Math.max(29);
+
+if(dateAnnee == dateAnnee/ 400){
+    dateMois = bisextile;
 }
 
+else if(dateAnnee / 100){
+    dateMois = anneeNormal;
+}
+
+else(dateJour && dateMois && dateAnnee !== Number)
+{
+    console.log("Ecrivez en chiffres après avoir actualisez la page.");
+    break;
+}
 Date.parse()
 
 // EXO 4
@@ -52,12 +63,12 @@ let prenom = prompt("Renseigner votre prénom");
 let age = anniversaire - passer;
 passer.getFullYear();
 let jourPasser = passer.getDay();
-let moisPasser = passer.getMonth();
-let anneePasser = passer.getYear();
+let moisPasser = passer.getUTCMonth();
+let anneePasser = passer.getFullYear();
 anniversaire.getFullYear();
 let jourAnniversaire = anniversaire.getDay();
-let moisAnniversaire = anniversaire.getMonth();
-let anneeAnniversaire = anniversaire.getYear();
+let moisAnniversaire = anniversaire.getUTCMonth();
+let anneeAnniversaire = anniversaire.getFullYear();
 
 alert("Joyeux anniversaire " + prenom + " " + nom + " ! Vous avez" + age + " ! Et nous sommes le : " + jourAnniversaire + " " + moisAnniversaire + " " + anneeAnniversaire + " !");
 
