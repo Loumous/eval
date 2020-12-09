@@ -1,43 +1,69 @@
 // EXO 1
-// affiche heure 1sec plus tard que l'heure choisie
-//(millisecondes divisé par 1000 pour donné des secondes divisé par 60 pour donné les minutes divisé par 60 pour donner des heures divisé par 24 pour donné les jours. des millisecondes/secondes, minutes, heure, jours)
-          
+let heure= new Date();
+console.log("Heure afficher moins une seconde : "+heure.getHours()+ heure.getMinutes()+ heure.getSeconds(-1));
+
 // EXO 2
 // quand un candidat est élu à plus de 50 %, il devient élu dès le 1er tour.
 // si 2eme tour, que les candidats avec au moins 12.5% de voix.
 // Ecrire algo qui permet la saisie de scores pour 4 candidats au 1er tour uniquement.
 // il dira si élu ou non.
 // si 1er au premier tour go au 2nd tour en ballotage
-//si pas 1er au premier tour go au 2nd en défavorable
-
+// si pas 1er au premier tour go au 2nd en défavorable
 
 // EXO 3
 // algo qui demande un num de jour, de mois, et d'année
 // puis renvoie si il s'agit ou non d'une date valide.
-// (le mois de février compte 28 jours sauf en bisextile(29))
+// (mois de février: 28 jours sauf en bisextile(29))
 // si bisextile, divisible par 4
 // années divisible par 100 sont pas bisextiles
-// années divisible pas 400 sont bisextiles.
-let dateJour= Number(prompt("Renseigner un jour (en chiffre au format 'xx')"));
-let dateMois= Number(prompt("Renseigner un mois (en chiffre au format 'xx')"));
-let dateAnnee= Number.isInteger(prompt("Renseigner une année (en chiffre au format 'xxxx')"));
-let bisextile = Math.max(28);
-let anneeNormal = Math.max(29);
+// années pas divisible par 400 sont bisextiles.
 
-if(dateAnnee == dateAnnee/ 400){
-    dateMois = bisextile;
-}
+// let dateJour= Number(prompt("Renseigner un jour (en nombre au format 'xx')"));
+// let dateMois= Number(prompt("Renseigner un mois (en nombre au format 'xx')"));
+// let dateAnnee= Number(prompt("Renseigner une année (en nombre au format 'xxxx')"));
+// let bisextile = Math.max(28);
+// let anneeNormal = Math.max(29);
+let date = Number(prompt("Renseigner un jour, un mois et une année (en nombre au format 'xx/xx/xxxx').").value);
+let joursMois = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+let fevrier = joursMois[2];
+if ((fevrier % 400 === 0) || (fevrier % 100 !== 0 && fevrier % 4 === 0)) {
+    joursMois[2] = 29;
+  }
 
-else if(dateAnnee / 100){
-    dateMois = anneeNormal;
-}
-
-else(dateJour && dateMois && dateAnnee !== Number)
+else
 {
-    console.log("Ecrivez en chiffres après avoir actualisez la page.");
-    break;
+    console.log("Année bisextile.")
 }
-Date.parse()
+
+// if (dateJour == Math.max(31) && (dateMois == Math.max(12)){
+// }
+// if(dateAnnee == dateAnnee/400){
+//     dateMois = bisextile;
+// }
+// else if(dateAnnee / 100){
+//     dateMois = anneeNormal;
+// }
+// if((dateAnnee % 400) === 0){
+//     dateMois = bisextile;
+// }
+// else
+// {
+//     console.log("Cette année n'est pas bisextile");
+//     break;
+// }
+// else if((dateAnnee % 100) === 0.1){
+//     dateMois = anneeNormal;
+// }
+// else(dateJour && dateMois && dateAnnee !== Number)
+// {
+//     console.log("Ecrivez en chiffres après avoir actualisez la page.");
+//     break;
+// }
+// getRandomInt(min, max)
+// Date.parse()
+//Number.isInteger
+
+
 
 // EXO 4
 let nombreAdeviner = Number(prompt("Choisissez le nombre à faire deviner").value);
@@ -77,12 +103,20 @@ console.log("Joyeux anniversaire " + prenom + " " + nom + " ! Vous avez" + age +
 // EXO 6
 let tableau1=[];
 let tableau2=[];
+// let multiplication = Number(tableau1 *= tableau2);
+// let addition = Number(tableau1 += tableau2);
+// let chtroumf =  multiplication + addition;
+// let addition= itableau1 + itableau2;
+//multiplier l'index de chaque tableau entre eux
+//puis additionner chaque resultat
 let schtroumpf = multipli1 + multipli2;
 
 for (i=0; i<tableau1.length; i++){
+    // i=itableau1;
     i=multipli1
 }
 for (i=0; i<tableau2.lenght; i++){
+    // i=itableau2;
     i=multipli2
 }
 console.log("Voici le schtroumpf : ", schtroumpf, " !");
